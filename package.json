@@ -1,14 +1,10 @@
 {
-  "name": "modern-angularjs-starter",
+  "name": "modern-angularjs-todo",
   "version": "0.0.1",
-  "description": "Base project",
+  "description": "Todo List",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently --kill-others \"webpack-dev-server --host 0.0.0.0\" \"npm run docs\"",
-    "docs_gen": "jsdoc -r -d jsdoc_output/ public/",
-    "docs_watch": "watch \"npm run docs_gen\" public",
-    "docs_serve": "echo Docs are being served on port 8082! && live-server -q --port=8082 --no-browser jsdoc_output/",
-    "docs": "concurrently --kill-others \"npm run docs_serve\" \"npm run docs_watch\"",
+    "start": "concurrently --kill-others \"webpack-dev-server -w --host 0.0.0.0\"",
     "postinstall": "bower install",
     "webpack": "webpack",
     "test": "mocha-webpack public/**/*.spec.js"
@@ -25,12 +21,8 @@
     "es7",
     "components"
   ],
-  "author": "Nick Arthur",
+  "author": "Eduardo Reche",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/narthur157/modern-angularjs-starter/issues"
-  },
-  "homepage": "https://github.com/narthur157/modern-angularjs-starter#readme",
   "devDependencies": {
     "angular": "^1.6.4",
     "babel-cli": "^6.24.1",
@@ -52,5 +44,9 @@
     "watch": "^1.0.2",
     "webpack": "^2.3.3",
     "webpack-dev-server": "^2.4.2"
+  },
+  "dependencies": {
+    "lodash": "^4.17.10",
+    "moment": "^2.22.2"
   }
 }

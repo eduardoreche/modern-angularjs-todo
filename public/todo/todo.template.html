@@ -1,0 +1,22 @@
+<div>
+  <h1>Todo list</h1>
+  <input type="text" name="description" ng-model="$ctrl.description" placeholder="What have to be done?"/>
+  <button ng-click="$ctrl.addItem()">Add Todo</button>
+
+  <ul>
+    <li ng-repeat="todo in $ctrl.todos | filter: {done:false}">
+      <input type="checkbox" ng-model="todo.done" ng-change="$ctrl.toggleDone(todo)"/> 
+      <span>{{todo.description}}</span>
+    </li>
+  </ul>
+  <hr />
+  <ul>
+    <li ng-repeat="todo in $ctrl.todos | filter: {done:true} ">
+        <input type="checkbox" ng-model="todo.done" ng-change="$ctrl.toggleDone(todo)"/> 
+      <span style="text-decoration: line-through">
+        {{todo.description}}
+      </span>
+    </li>
+  </ul>
+
+</div>
